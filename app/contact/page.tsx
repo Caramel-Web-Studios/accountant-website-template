@@ -2,9 +2,8 @@
 
 import { useEffect, useRef, useSyncExternalStore } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, Calendar, Clock, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, } from "lucide-react";
 import Image from "next/image";
-import Cal, { getCalApi } from "@calcom/embed-react";
 
 // Import your refined animations
 import { slideIn, fadeUp, staggerContainer } from "@/lib/animations";
@@ -41,16 +40,7 @@ export default function ContactPage() {
   const formInitialized = useRef(false);
 
   useEffect(() => {
-    // 1. Initialize Cal.com API
-    (async function initCal() {
-      const cal = await getCalApi({ namespace: "website-consultation" });
-      cal("ui", {
-        theme: "light",
-        styles: { branding: { brandColor: "#19757e" } },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
-    })();
+   
 
     // 2. Load and Initialize HubSpot Form
     const script = document.createElement("script");
@@ -152,70 +142,12 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto px-6 relative z-10 pt-12">
         <div className="grid lg:grid-cols-12 gap-8 items-stretch mb-8">
           
-          {/* LEFT: CAL.COM SCHEDULER */}
-          <motion.div
-            variants={slideIn("left", 0.5)}
-            className="lg:col-span-7 bg-white p-10 rounded-[2.5rem] shadow-2xl shadow-brand-text/5 border border-brand-text/5 flex flex-col"
-          >
-            <h3 className="text-[11px] font-black uppercase tracking-widest text-brand-text mb-8 border-b border-brand-text/5 pb-4 flex items-center gap-2">
-              <Calendar size={14} className="text-brand-primary" />
-              Schedule Briefing
-            </h3>
-
-            <div className="grid lg:grid-cols-3 gap-10 grow">
-              <div className="lg:col-span-1 space-y-8">
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <Clock size={14} className="text-brand-primary" />
-                    <p className="text-brand-primary font-black uppercase tracking-widest text-[9px]">
-                      Duration
-                    </p>
-                  </div>
-                  <p className="text-sm font-bold text-brand-text">30 Minute Session</p>
-                </div>
-                <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <CheckCircle2 size={14} className="text-brand-primary" />
-                    <p className="text-brand-primary font-black uppercase tracking-widest text-[9px]">
-                      Focus
-                    </p>
-                  </div>
-                  <ul className="space-y-3">
-                    {["Workflow Automation", "System Integration", "UK Compliance"].map(
-                      (item) => (
-                        <li
-                          key={item}
-                          className="flex items-center gap-2 text-[11px] font-bold text-brand-text/70 uppercase tracking-tight"
-                        >
-                          <span className="w-1 h-1 rounded-full bg-brand-primary" />
-                          {item}
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </div>
-              </div>
-              <div className="lg:col-span-2 bg-brand-surface/40 rounded-3xl overflow-hidden border border-brand-text/5 p-1 min-h-137.5">
-                {isMounted && (
-                  <Cal
-                    namespace="website-consultation"
-                    calLink="caramelwebstudios/website-consultation"
-                    style={{ width: "100%", height: "100%" }}
-                    config={{
-                      layout: "month_view",
-                      theme: "light",
-                      useSlotsViewOnSmallScreen: "true",
-                    }}
-                  />
-                )}
-              </div>
-            </div>
-          </motion.div>
+         
 
           {/* RIGHT: HUBSPOT FORM */}
           <motion.div
             variants={slideIn("right", 0.5)}
-            className="lg:col-span-5 bg-white p-10 rounded-[2.5rem] border border-brand-text/5 shadow-2xl shadow-brand-text/5 flex flex-col"
+            className="lg:col-span-12 bg-white p-10 rounded-[2.5rem] border border-brand-text/5 shadow-2xl shadow-brand-text/5 flex flex-col"
           >
             <h3 className="text-[11px] font-black uppercase tracking-widest text-brand-text mb-8 border-b border-brand-text/5 pb-4 flex items-center gap-2">
               <Mail size={14} className="text-brand-primary" />
@@ -242,7 +174,7 @@ export default function ContactPage() {
               <p className="text-[10px] font-black uppercase tracking-[0.2em] opacity-40 mb-1">
                 Direct Correspondence
               </p>
-              <p className="text-xl md:text-2xl font-bold tracking-tight">+44 7828 693 818</p>
+              <p className="text-xl md:text-2xl font-bold tracking-tight">+44 2085973316 </p>
             </div>
           </div>
           <div className="flex items-center gap-6 p-8 rounded-[2.5rem] bg-white border border-brand-text/5 shadow-sm group flex-1 transition-all hover:-translate-y-1">
@@ -251,10 +183,10 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-text/40 mb-1">
-                Electronic Mail
+                E-Mail
               </p>
               <p className="text-xl md:text-2xl font-bold text-brand-text lowercase tracking-tight">
-                info@flexipaysystems.com
+               info@mandmaccountsandtaxation.com
               </p>
             </div>
           </div>

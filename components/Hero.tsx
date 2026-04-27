@@ -42,7 +42,7 @@ export default function Hero() {
             variants={slideIn("left", 0.1)}
             className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-primary mb-6 block"
           >
-            FlexiPay Systems
+            M&M Accounts & Taxation
           </motion.span>
 
           {/* Headline - Slides in from left with slight delay */}
@@ -50,7 +50,8 @@ export default function Hero() {
             variants={slideIn("left", 0.2)}
             className="text-4xl md:text-5xl font-black text-brand-text mb-6 leading-tight"
           >
-            Startup Payroll & <span className="text-brand-primary italic">Bookkeeping</span>
+            
+Expert Accounting <span className="text-brand-primary italic">& Taxation Services </span>
           </motion.h1>
 
           {/* Subtext - Fades up */}
@@ -58,24 +59,27 @@ export default function Hero() {
             variants={fadeUp(0.3)}
             className="text-lg text-brand-text/70 mb-10 max-w-md leading-relaxed font-medium"
           >
-            Focus on growing your startup while we take care of your payroll, bookkeeping, and compliance — accurate, reliable, and stress-free.
-          </motion.p>
+          Professional financial solutions tailored for your business growth. Trust M&M for accuracy, compliance, and peace of mind.</motion.p>
 
           {/* CTA Buttons - Fades up slightly later */}
-          <motion.div 
+  <motion.div
             variants={fadeUp(0.4)}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-5"
           >
-            <Link href="/contact">
-              <button className="bg-brand-text text-white px-12 py-5 rounded-full font-bold flex items-center gap-3 shadow-2xl shadow-brand-text/20 transition-transform hover:scale-105 active:scale-95">
-                Book Free Consultation
-              </button>
+            {/* PRIMARY */}
+            <Link
+              href="/booking"
+              className="bg-brand-text text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest shadow-lg shadow-brand-text/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-95 flex items-center justify-center"
+            >
+              Book Free Consultation
             </Link>
 
-            <Link href="/quote">
-              <button className="bg-white text-brand-text border border-brand-text/20 px-10 py-4 rounded-full font-bold text-lg hover:bg-brand-primary hover:text-white transition-colors">
-                Request a Quote
-              </button>
+            {/* SECONDARY */}
+            <Link
+              href="/quote"
+              className="bg-white text-brand-text border border-brand-text/20 px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest transition-all duration-300 hover:bg-brand-primary hover:text-white hover:border-brand-primary hover:-translate-y-1 active:scale-95 flex items-center justify-center"
+            >
+              Request a Quote
             </Link>
           </motion.div>
         </div>
@@ -95,7 +99,7 @@ export default function Hero() {
             <div className="relative z-20 w-full h-125 flex items-end justify-center pointer-events-none overflow-hidden rounded-3xl">
               <Image 
                 src="/founder.jpg" 
-                alt="Nighat Zafar - Founder"
+                alt="Shahid Shah- Founder"
                 width={600}
                 height={750}
                 priority
@@ -118,8 +122,8 @@ export default function Hero() {
                 &quot;We build systems that give UK founders their time back.&quot;
               </p>
               <div className="flex flex-col text-[10px] font-black uppercase text-brand-primary tracking-widest">
-                <span>Nighat Zafar</span>
-                <span className="text-white/40">Founder, FlexiPay Systems</span>
+                <span>Shahid Shah</span>
+                <span className="text-white/40">Founder, M&M Accounts & Taxation</span>
               </div>
             </motion.div>
 
